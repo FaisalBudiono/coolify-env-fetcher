@@ -1,0 +1,19 @@
+name: "Coolify ENV Fetcher"
+description: "Fetch ENV from coolify project and save it as .env"
+inputs:
+  base-url:
+    description: "Base URL of coolify"
+    required: true
+  access-token: 
+    description: "Access Token"
+    required: true
+  app-id: 
+    description: "Your Application ID"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.base-url }}
+    - ${{ inputs.access-token }}
+    - ${{ inputs.app-id }}
