@@ -54,3 +54,5 @@ jobs:
           cache-to: |
             type=gha,scope=app,mode=max
           push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
