@@ -11,16 +11,16 @@ import (
 func main() {
 	base := flag.String("base", "", "Base URL")
 	accessToken := flag.String("access", "", "Coolify Access Token")
-	projectID := flag.String("project", "", "Coolify Project ID")
+	appID := flag.String("app", "", "Coolify App ID")
 	flag.Parse()
 
-	if *base == "" || *accessToken == "" || *projectID == "" {
+	if *base == "" || *accessToken == "" || *appID == "" {
 		fmt.Println("Should complete all parameters")
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
 
-	res, err := coolify.ParseENV(*base, *projectID, *accessToken)
+	res, err := coolify.ParseENV(*base, *appID, *accessToken)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)

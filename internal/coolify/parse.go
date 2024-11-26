@@ -31,8 +31,8 @@ type errorResponse struct {
 	Message string `json:"message"`
 }
 
-func ParseENV(baseURL, projectID, accessToken string) ([]EnvObject, error) {
-	req, err := http.NewRequest(http.MethodGet, url(baseURL, projectID), nil)
+func ParseENV(baseURL, appID, accessToken string) ([]EnvObject, error) {
+	req, err := http.NewRequest(http.MethodGet, url(baseURL, appID), nil)
 	if err != nil {
 		return []EnvObject{}, err
 	}
