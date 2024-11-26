@@ -8,5 +8,4 @@ RUN CGO_ENABLED=0 go build -o app ./cmd/app/main.go
 FROM alpine:3.10 AS app
 COPY --from=build /app/app /app
 COPY entrypoint.sh /entrypoint.sh
-RUN mkdir out
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

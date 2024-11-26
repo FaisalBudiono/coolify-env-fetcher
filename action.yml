@@ -4,10 +4,10 @@ inputs:
   base-url:
     description: "Base URL of coolify"
     required: true
-  access-token: 
+  access-token:
     description: "Access Token"
     required: true
-  app-id: 
+  app-id:
     description: "Your Application ID"
     required: true
 runs:
