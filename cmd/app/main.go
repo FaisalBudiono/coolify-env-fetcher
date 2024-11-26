@@ -26,7 +26,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	path := fmt.Sprintf("out/%s", ".env")
+	path := ".env"
 	f, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println(err)
