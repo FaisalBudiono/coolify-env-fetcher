@@ -1,5 +1,5 @@
 # Important!
-Make sure the ENV you want to fetch does not have any sensitive data. This action only fetched the ENV that build flag on it, so make sure your build flag is not sensitive.
+Make sure the ENV you want to fetch does not have any sensitive data. This action only fetched the ENV that has a `build flag` on it, so make sure your `build flag` ENV is not sensitive.
 
 # Usage Example
 
