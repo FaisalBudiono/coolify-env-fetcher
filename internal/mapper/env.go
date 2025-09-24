@@ -14,7 +14,7 @@ func NewDotENV() *dotENV {
 
 func (d *dotENV) WriteFile(w io.Writer, es []coolify.EnvObject) error {
 	for _, e := range es {
-		if !e.IsBuildTime {
+		if !e.IsBuildENV() {
 			continue
 		}
 

@@ -11,6 +11,7 @@ type EnvObject struct {
 	UUID             string `json:"uuid"`
 	ApplicationID    int    `json:"application_id"`
 	IsBuildTime      bool   `json:"is_build_time"`
+	IsBuildTimeOnly  bool   `json:"is_build_time_only"`
 	IsLiteral        bool   `json:"is_literal"`
 	IsMultiline      bool   `json:"is_multiline"`
 	IsPreview        bool   `json:"is_preview"`
@@ -25,6 +26,10 @@ type EnvObject struct {
 	Version          string `json:"version"`
 	CreatedAt        string `json:"created_at"`
 	UpdatedAt        string `json:"updated_at"`
+}
+
+func (e EnvObject) IsBuildENV() bool {
+	return e.IsBuildTime || e.IsBuildTimeOnly
 }
 
 type errorResponse struct {
