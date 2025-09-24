@@ -11,7 +11,7 @@ type EnvObject struct {
 	UUID             string `json:"uuid"`
 	ApplicationID    int    `json:"application_id"`
 	IsBuildTime      bool   `json:"is_build_time"`
-	IsBuildTimeOnly  bool   `json:"is_build_time_only"`
+	IsBuildTimeOnly  bool   `json:"is_buildtime_only"`
 	IsLiteral        bool   `json:"is_literal"`
 	IsMultiline      bool   `json:"is_multiline"`
 	IsPreview        bool   `json:"is_preview"`
