@@ -18,7 +18,7 @@ func (d *dotENV) WriteFile(w io.Writer, es []coolify.EnvObject) error {
 			continue
 		}
 
-		con := fmt.Sprintf("%s=%s\n", e.Key, e.Value)
+		con := fmt.Sprintf("%s=%s\n", e.Key, e.RealValue)
 		_, err := w.Write([]byte(con))
 		if err != nil {
 			return err
