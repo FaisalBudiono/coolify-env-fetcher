@@ -8,10 +8,13 @@ import (
 )
 
 type EnvObject struct {
-	UUID             string `json:"uuid"`
-	ApplicationID    int    `json:"application_id"`
-	IsBuildTime      bool   `json:"is_build_time"`
-	IsBuildTimeOnly  bool   `json:"is_buildtime_only"`
+	UUID          string `json:"uuid"`
+	ApplicationID int    `json:"application_id"`
+
+	IsBuildTimeNew  bool `json:"is_buildtime"`
+	IsBuildTime     bool `json:"is_build_time"`
+	IsBuildTimeOnly bool `json:"is_buildtime_only"`
+
 	IsLiteral        bool   `json:"is_literal"`
 	IsMultiline      bool   `json:"is_multiline"`
 	IsPreview        bool   `json:"is_preview"`
@@ -29,7 +32,7 @@ type EnvObject struct {
 }
 
 func (e EnvObject) IsBuildENV() bool {
-	return e.IsBuildTime || e.IsBuildTimeOnly
+	return e.IsBuildTime || e.IsBuildTimeOnly || e.IsBuildTimeNew
 }
 
 type errorResponse struct {
