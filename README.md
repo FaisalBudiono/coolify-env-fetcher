@@ -1,7 +1,19 @@
 # Important!
+
 Make sure the ENV you want to fetch does not have any sensitive data. This action only fetched the ENV that has a `build flag` on it, so make sure your `build flag` ENV is not sensitive.
 
-# Usage Example
+# Usage
+
+Arguments:
+
+| Name           | Description           | Required            |
+| -------------- | --------------------- | ------------------- |
+| `base-url`     | Base URL of coolify   | Yes                 |
+| `access-token` | Access Token          | Yes                 |
+| `app-id`       | Your Application ID   | Yes                 |
+| `is-preview`   | Is using preview ENV? | No (default: false) |
+
+## Example
 
 ```yaml
 name: Deploy
@@ -34,6 +46,6 @@ jobs:
       - name: Download .env
         uses: actions/download-artifact@v4
         with:
-          name: dev-env 
+          name: dev-env
       - run: ls -la
 ```
