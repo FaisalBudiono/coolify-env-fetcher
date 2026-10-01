@@ -10,6 +10,11 @@ inputs:
   app-id:
     description: "Your Application ID"
     required: true
+  is-preview:
+    description: "Should fetch preview ENV? Put 'true' if want to get the preview ENV"
+    required: false
+    default: "false"
+
 runs:
   using: "docker"
   image: "docker://secondculs/coolify-env-fetcher:1"
@@ -17,3 +22,4 @@ runs:
     - ${{ inputs.base-url }}
     - ${{ inputs.access-token }}
     - ${{ inputs.app-id }}
+    - ${{ inputs.is-preview }}
